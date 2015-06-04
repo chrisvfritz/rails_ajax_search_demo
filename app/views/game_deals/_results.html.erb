@@ -1,0 +1,9 @@
+<% if @results.any? %>
+  <ul>
+    <% @results.each do |result| %>
+      <li><%= result.title %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>Arg! No games found!</p>
+<% end %>

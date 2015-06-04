@@ -1,14 +1,7 @@
-<%= form_tag root_url, method: :get do %>
+<%= form_tag root_url, method: :get, remote: true do %>
   <%= text_field_tag :title, params[:title] %>
-  <%= submit_tag 'Search' %>
 <% end %>
 
-<% if @results.any? %>
-  <ul>
-    <% @results.each do |result| %>
-      <li><%= result.title %></li>
-    <% end %>
-  </ul>
-<% else %>
-  <p>Arg! No games found!</p>
-<% end %>
+<div id="results">
+  <%= render 'results' %>
+</div>
